@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * contact-form-response router
  */
 
-import { factories } from '@strapi/strapi';
+const { createCoreRouter } = require('@strapi/strapi').factories
 
-export default factories.createCoreRouter('api::contact-form-response.contact-form-response');
+module.exports = createCoreRouter('api::contact-form-response.contact-form-response');

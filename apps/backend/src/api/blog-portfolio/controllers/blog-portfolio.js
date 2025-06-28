@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * blog-portfolio controller
  */
 
-import { factories } from '@strapi/strapi'
+const { createCoreController } = require('@strapi/strapi').factories
 
-export default factories.createCoreController('api::blog-portfolio.blog-portfolio');
+module.exports = createCoreController('api::blog-portfolio.blog-portfolio');

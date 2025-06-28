@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * blog-portfolio router
  */
 
-import { factories } from '@strapi/strapi';
+const { createCoreRouter } = require('@strapi/strapi').factories
 
-export default factories.createCoreRouter('api::blog-portfolio.blog-portfolio');
+module.exports = createCoreRouter('api::blog-portfolio.blog-portfolio');

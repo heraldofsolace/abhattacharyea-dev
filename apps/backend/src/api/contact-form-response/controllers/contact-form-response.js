@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * contact-form-response controller
  */
 
-import { factories } from '@strapi/strapi'
+const { createCoreController } = require('@strapi/strapi').factories
 
-export default factories.createCoreController('api::contact-form-response.contact-form-response');
+module.exports = createCoreController('api::contact-form-response.contact-form-response');

@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * post controller
  */
 
-import { factories } from '@strapi/strapi'
+const { createCoreController } = require('@strapi/strapi').factories
 
-export default factories.createCoreController('api::post.post');
+module.exports = createCoreController('api::post.post');

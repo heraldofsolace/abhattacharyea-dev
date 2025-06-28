@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * service-pricing router
  */
 
-import { factories } from '@strapi/strapi';
+const { createCoreRouter } = require('@strapi/strapi').factories
 
-export default factories.createCoreRouter('api::service-pricing.service-pricing');
+module.exports = createCoreRouter('api::service-pricing.service-pricing');

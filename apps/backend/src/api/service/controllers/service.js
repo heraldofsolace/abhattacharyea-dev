@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * service controller
  */
 
-import { factories } from '@strapi/strapi'
+const { createCoreController } = require('@strapi/strapi').factories
 
-export default factories.createCoreController('api::service.service');
+module.exports = createCoreController('api::service.service');

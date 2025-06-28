@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * service-pricing service
  */
 
-import { factories } from '@strapi/strapi';
+const { createCoreService } = require('@strapi/strapi').factories
 
-export default factories.createCoreService('api::service-pricing.service-pricing');
+module.exports = createCoreService('api::service-pricing.service-pricing');

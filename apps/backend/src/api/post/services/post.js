@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * post service
  */
 
-import { factories } from '@strapi/strapi';
+const { createCoreService } = require('@strapi/strapi').factories
 
-export default factories.createCoreService('api::post.post');
+module.exports = createCoreService('api::post.post');

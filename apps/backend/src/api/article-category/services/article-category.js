@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * article-category service
  */
 
-import { factories } from '@strapi/strapi';
+const { createCoreService } = require('@strapi/strapi').factories
 
-export default factories.createCoreService('api::article-category.article-category');
+module.exports = createCoreService('api::article-category.article-category');
