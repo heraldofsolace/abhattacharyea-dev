@@ -27,7 +27,7 @@ function BlogCard({post}:{post: APIResponseData<"api::post.post">}) {
                 </CardAction>
             </CardHeader>
             <CardContent className="flex flex-col justify-center">
-                <Image src={`${strapiURL}${post.feature_image?.url}`} className="mx-auto" width={500} height={300} alt="" />
+                <Image src={`${strapiURL}/uploads${post.feature_image?.url}`} className="mx-auto" width={500} height={300} alt="" />
                 <p className="mt-5">{post.summary}</p>
             </CardContent>
             <CardFooter className="absolute bottom-0 mb-3">
