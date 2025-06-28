@@ -19,6 +19,7 @@ export default async function Blog({
         <main className="mt-20 p-10">
             <h1 className="text-9xl font-mono font-semibold">{blog.data.title}</h1>
             <figure className="mt-5 mb-3">
+              
               <Image src={`${strapiURL}${blog.data.feature_image?.url}`} width={1000} height={300} alt="" />
               <figcaption></figcaption>
             </figure>
