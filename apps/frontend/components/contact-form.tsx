@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
-import { z } from "zod/v4"
+import { z } from "zod"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -15,21 +15,30 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "./ui/textarea"
+import { formSchema } from "@/lib/data/contact-form"
+import { toast } from "sonner"
 
-const formSchema = z.object({
-  from: z.email(),
-  subject: z.string(),
-  message: z.string()
-})
 
-export default function ContactForm() {
+export default function ContactForm({submitForm}: {submitForm: (values: z.infer<typeof formSchema>)=>Promise<{success: boolean, error: string}>}) {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      from: "",
+      subject: "",
+      message: ""
+    }
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const {success, error} = await submitForm(values)
+    if(success) {
+      toast("Message sent", {
+        position: "top-center"
+      })
+    } else {
+      toast(`An error ocurred: ${error}`)
+    }
   }
 
   return (

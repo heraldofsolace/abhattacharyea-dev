@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/data/posts";
+import { getPostsPaginated } from "@/lib/data/posts";
 import { APIResponseData } from "@/src/types/types";
 import {
   Card,
@@ -13,7 +13,6 @@ import Link from "next/link";
 import Image from "next/image";
 import PaginationComponent from "@/components/pagination-component";
 import { Badge } from "@/components/ui/badge";
-import BlogSidebar from "@/components/blog-sidebar";
 
 function BlogCard({post}:{post: APIResponseData<"api::post.post">}) {
     return (
@@ -37,11 +36,13 @@ function BlogCard({post}:{post: APIResponseData<"api::post.post">}) {
     )
 }
 
-export default async function Blogs({searchParams}:{searchParams?: { page: string }}) {
-    const page = Number(searchParams?.page) || 1
+export default async function Blogs({searchParams}:{
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+    const page = Number((await searchParams).page) || 1
  
     console.log(page)
-    const allPosts = await getAllPosts(page);
+    const allPosts = await getPostsPaginated(page);
     return (<div className="flex items-center justifiy-center">
         <div className="col-span-3">
             <div className="mt-20 p-10 grid grid-cols-4 gap-5">

@@ -205,7 +205,7 @@ export default function WaveReveal({
         className,
       )}
     >
-      {nodes}
+      {nodes.map(node => <>{node}</>)}
       <div className="sr-only">{text}</div>
     </div>
   );

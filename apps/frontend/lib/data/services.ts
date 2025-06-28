@@ -1,4 +1,4 @@
-import { CollectionTypeResponse, SingleTypeResponse } from '@/src/types/types';
+import { CollectionTypeResponse } from '@/src/types/types';
 import { strapi } from '@strapi/client';
 
 const query = { populate: "*" };

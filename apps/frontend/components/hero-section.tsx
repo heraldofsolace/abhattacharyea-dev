@@ -55,12 +55,13 @@ export default function HeroSection() {
         }
     }, [x])
     return (
-        <header className="flex items-center justify-evenly h-screen">
+        <header className="flex items-center justify-evenly w-screen">
             <InteractiveGrid>
                 <div className="flex items-end justify-center">
                     <motion.svg
                         width="8rem"
                         height="25rem"
+                        className={"w-10 h-30 mr-1 lg:w-30 lg:h-96"}
                         viewBox="0 0 120.62893 186.14587"
                         version="1.1"
                         id="svg1">
@@ -74,7 +75,7 @@ export default function HeroSection() {
                         </defs>
                         <g
                             id="layer1"
-                            transform="translate(-40.353296,45.824548)"
+                            transform="translate(-40.353296,49.824548)"
                             >
                             <motion.path
                                 id="rect10"
@@ -95,10 +96,11 @@ export default function HeroSection() {
                             </g>
                         </g>
                     </motion.svg>
-                    <span className="text-9xl mx-1 font-bold text-foreground font-(family-name:--font-geometrica)">N</span>
+                    <span className="text-5xl lg:text-9xl mx-1 font-bold text-foreground font-(family-name:--font-geometrica)">N</span>
                     <motion.svg
                         width="6rem"
                         height="20rem"
+                        className={"w-10 h-20 lg:w-30 lg:h-64"}
                         viewBox="0 0 120.62893 186.14587"
                         version="1.1"
                         id="svg2">
@@ -132,11 +134,11 @@ export default function HeroSection() {
                             </g>
                         </g>
                     </motion.svg>
-                    <span className="text-9xl mx-1 font-bold text-foreground font-(family-name:--font-geometrica)">K</span>
-                    <span className="text-9xl mx-1 font-bold text-foreground font-(family-name:--font-geometrica)">E</span>
-                    <span className="text-9xl mx-1 font-bold text-foreground font-(family-name:--font-geometrica)">T</span>
+                    <span className="text-5xl lg:text-9xl mx-1 font-bold text-foreground font-(family-name:--font-geometrica)">K</span>
+                    <span className="text-5xl lg:text-9xl mx-1 font-bold text-foreground font-(family-name:--font-geometrica)">E</span>
+                    <span className="text-5xl lg:text-9xl mx-1 font-bold text-foreground font-(family-name:--font-geometrica)">T</span>
                 </div>
-                <div className="flex justify-center"><h4>Worry free developer marketing</h4></div>
+                <div className="flex justify-center"><h4 className="text-lg">Worry free developer marketing</h4></div>
                 <ServicesList />
 
 

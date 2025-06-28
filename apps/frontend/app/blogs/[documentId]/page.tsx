@@ -1,9 +1,10 @@
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 
-import { getPost } from "@/lib/data/posts"
+import { getPostsPaginated, getPost, getAllPosts } from "@/lib/data/posts"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import BlogSidebar from "@/components/blog-sidebar"
+import { notFound } from "next/navigation"
 
 export default async function Blog({
   params,
@@ -11,9 +12,9 @@ export default async function Blog({
   params: Promise<{ documentId: string }>
 }) {
     const {documentId} = await params
-    const blog = await getPost(documentId)
-    
-    return (<>
+    try {
+      const blog = await getPost(documentId)
+      return (<>
         <main className="mt-20 p-10">
             <h1 className="text-9xl font-mono font-semibold">{blog.data.title}</h1>
             <figure className="mt-5 mb-3">
@@ -30,7 +31,19 @@ export default async function Blog({
             </article>
    
         </main>
-        <BlogSidebar />
+        <BlogSidebar postId={documentId} />
         </>
     )
+    } catch {
+      notFound()
+    }
+    
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+ 
+  return posts.data.map((post) => ({
+    documentId: post.documentId,
+  }))
 }

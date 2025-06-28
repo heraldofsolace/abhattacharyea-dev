@@ -22,7 +22,7 @@ const images = [
 function ServiceCard({service, index}: { service: GetValues<"api::service.service">, index: number}) {
     const {name, starting_price, summary, slug} = service
     return (
-        <Card className="w-100">
+        <Card className="max-w-100">
             <CardHeader>
                 <CardTitle>{name}</CardTitle>
                 <CardDescription>{starting_price}</CardDescription>
@@ -46,7 +46,7 @@ export default async function Services() {
             <h1 className="text-9xl font-mono font-semibold p-10">
                 Services
             </h1>
-            <div className="flex gap-10 justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-center">
                 {services.data.map((service, index) => {
                         return <ServiceCard service={service} key={service.slug} index={index} />
                     })}

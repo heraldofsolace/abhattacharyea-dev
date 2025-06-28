@@ -1,4 +1,4 @@
-import {getAllPosts} from "@/lib/data/posts";
+import {getPostsPaginated} from "@/lib/data/posts";
 import * as React from "react"
 import Image from "next/image"
 
@@ -9,8 +9,8 @@ import Link from "next/link";
 
 function ScrollAreaHorizontal({blogs}: {blogs: CollectionTypeResponse<"api::post.post">}) {
     return (
-        <ScrollArea className="rounded-md w-1/2 whitespace-nowrap">
-            <div className="flex w-max space-x-4 p-4">
+        <ScrollArea className="rounded-md xl:w-1/2 whitespace-nowrap">
+            <div className="flex flex-col xl:flex-row w-max space-y-4 xl:space-x-4 p-4">
                 {blogs.data.map((blog) => (
 
                     <div key={blog.documentId}>
@@ -35,19 +35,19 @@ function ScrollAreaHorizontal({blogs}: {blogs: CollectionTypeResponse<"api::post
 
                 ))}
             </div>
-            <ScrollBar orientation="horizontal" />
+            <ScrollBar orientation="horizontal" className="hidden xl:visible" />
         </ScrollArea>
     )
 }
 
 export default async function BlogsList() {
-    const blogs = await getAllPosts()
+    const blogs = await getPostsPaginated()
 
     return (
-        <section className="flex p-10 gap-10 items-center justify-center overflow-x-hidden">
+        <section className="flex flex-col-reverse xl:flex-row p-5 xl:p-10 xl:gap-10 w-screen items-center justify-center overflow-x-hidden">
             <ScrollAreaHorizontal blogs={blogs} />
-            <div className="w-1/2">
-                <h2 className="">Get Inspired</h2>
+            <div className="w-full p-5 xl:w-1/2 align-self-start">
+                <h2 className="text-5xl xl:text-7xl mb-3">Get Inspired</h2>
                 <Button>
                     <Link href="/blogs">Read more</Link>
                 </Button>

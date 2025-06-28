@@ -3,7 +3,7 @@ import { strapi } from '@strapi/client';
 
 const client = strapi({ baseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337/api' });
 
-export async function getAllPosts(page=1) {
+export async function getPostsPaginated(page=1) {
     const query = {
         populate: "*",
         pagination: {
@@ -14,6 +14,13 @@ export async function getAllPosts(page=1) {
     const posts = client.collection("posts")
     const allPosts = await posts.find(query) as unknown as CollectionTypeResponse<"api::post.post">
     console.log(allPosts)
+    return allPosts
+}
+
+export async function getAllPosts() {
+    const posts = client.collection("posts")
+    const allPosts = await posts.find() as unknown as CollectionTypeResponse<"api::post.post">
+
     return allPosts
 }
 

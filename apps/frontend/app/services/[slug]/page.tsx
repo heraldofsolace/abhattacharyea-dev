@@ -1,4 +1,4 @@
-import { getService } from "@/lib/data/services"
+import { getAllServices, getService } from "@/lib/data/services"
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 import Link from "next/link"
 import {
@@ -59,4 +59,12 @@ export default async function Service({
    
         </main>
     )
+}
+
+export async function generateStaticParams() {
+    const services = await getAllServices()
+     
+    return services.data.map((service) => ({
+        slug: service.slug,
+    }))
 }

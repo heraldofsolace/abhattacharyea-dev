@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import MenuAnimation from "./animata/list/menu-animation";
 
 export default function Footer() {
@@ -13,12 +12,12 @@ export default function Footer() {
         }
     ]
     return (
-        <footer className="p-30 flex font-mono font-semibold justify-between">
+        <footer className="p-10 xl:p-30 flex flex-col xl:flex-row font-mono font-semibold justify-between">
             <div className="">
-                <h1 className="text-7xl">Get in touch</h1>
-                <a className="text-main text-5xl" href={"mailto:aniket@abhattacharyea.dev"}>aniket@bhattacharyea.dev</a>
+                <h1 className="text-2xl xl:text-7xl">Get in touch</h1>
+                <a className="text-main text-2xl xl:text-5xl" href={"mailto:aniket@abhattacharyea.dev"}>aniket@bhattacharyea.dev</a>
             </div>
-            <div className="mx-10 flex gap-5">
+            <div className="xl:mx-10 flex gap-5">
                 <MenuAnimation menuItems={menuItems} />
             </div>
 

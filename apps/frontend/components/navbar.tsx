@@ -23,11 +23,6 @@ export function NavBar() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle({className: "bg-transparent hover:bg-transparent hover:text-gray-300"})}>
-            <Link href="/about">About</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle({className: "bg-transparent hover:bg-transparent hover:text-gray-300"})}>
             <Link href="/blogs">Blog</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>

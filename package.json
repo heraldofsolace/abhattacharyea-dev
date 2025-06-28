@@ -2,20 +2,15 @@
   "name": "abhattacharyea-dev",
   "version": "1.0.0",
   "main": "copyTypes.js",
-  "packageManager": "npm@10.9.2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "copytypes": "node copyTypes.js"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "turbo": "^2.5.4"
+    "nx": "21.2.1"
   }
 }
