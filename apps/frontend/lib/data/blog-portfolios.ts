@@ -3,7 +3,7 @@ import { strapi } from '@strapi/client';
 
 const query = { populate: "*" };
 
-const client = strapi({ baseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337/api' });
+const client = strapi({ baseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337/api', auth: process.env.STRAPI_TOKEN });
 
 export async function getAllBlogPortfolios() {
     const blogPortfolios = client.collection("blog-portfolios")
