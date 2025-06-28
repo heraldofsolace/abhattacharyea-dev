@@ -11,6 +11,7 @@ export default async function Blog({
 }: {
   params: Promise<{ documentId: string }>
 }) {
+    const strapiURL = process.env.STRAPI_BASE_URL || "http://localhost:1337"
     const {documentId} = await params
     try {
       const blog = await getPost(documentId)
@@ -18,7 +19,7 @@ export default async function Blog({
         <main className="mt-20 p-10">
             <h1 className="text-9xl font-mono font-semibold">{blog.data.title}</h1>
             <figure className="mt-5 mb-3">
-              <Image src={`http://localhost:1337${blog.data.feature_image?.url}`} width={1000} height={300} alt="" />
+              <Image src={`${strapiURL}${blog.data.feature_image?.url}`} width={1000} height={300} alt="" />
               <figcaption></figcaption>
             </figure>
             <div className="mt-3">

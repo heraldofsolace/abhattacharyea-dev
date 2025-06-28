@@ -8,6 +8,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 
 function ScrollAreaHorizontal({blogs}: {blogs: CollectionTypeResponse<"api::post.post">}) {
+    const strapiURL = process.env.STRAPI_BASE_URL || "http://localhost:1337"
     return (
         <ScrollArea className="rounded-md xl:w-1/2 whitespace-nowrap">
             <div className="flex flex-col xl:flex-row w-max space-y-4 xl:space-x-4 p-4">
@@ -17,7 +18,7 @@ function ScrollAreaHorizontal({blogs}: {blogs: CollectionTypeResponse<"api::post
                            <figure className={"shrink-0"}>
                             <div className="overflow-hidden">
                                 {blog.feature_image? <Image
-                                    src={`http://localhost:1337${blog.feature_image.url}`}
+                                    src={`${strapiURL}${blog.feature_image.url}`}
                                     alt={`Photo by`}
                                     className="aspect-[3/4] h-fit w-fit object-cover"
                                     width={150}
