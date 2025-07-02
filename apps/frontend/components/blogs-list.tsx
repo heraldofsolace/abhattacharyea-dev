@@ -18,7 +18,7 @@ function ScrollAreaHorizontal({blogs}: {blogs: CollectionTypeResponse<"api::post
                            <figure className={"shrink-0"}>
                             <div className="overflow-hidden">
                                 {blog.feature_image? <Image
-                                    src={`${strapiURL}/uploads${blog.feature_image.url}`}
+                                    src={`${strapiURL}${blog.feature_image.url}`}
                                     alt={`Photo by`}
                                     className="aspect-[3/4] h-fit w-fit object-cover"
                                     width={150}

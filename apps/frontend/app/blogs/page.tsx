@@ -27,8 +27,8 @@ function BlogCard({post}:{post: APIResponseData<"api::post.post">}) {
                 </CardAction>
             </CardHeader>
             <CardContent className="flex flex-col justify-center">
-                <Image src={`${strapiURL}/uploads${post.feature_image?.url}`} className="mx-auto" width={500} height={300} alt="" />
-                <p className="mt-5">{post.summary}</p>
+                <Image src={`${strapiURL}${post.feature_image?.url}`} className="mx-auto" width={500} height={300} alt="" />
+                <p className="my-5">{post.summary}</p>
             </CardContent>
             <CardFooter className="absolute bottom-0 mb-3">
                 {post.article_categories?.map((cat) => <Badge key={cat.slug}>{cat.name}</Badge>)}
@@ -46,7 +46,7 @@ export default async function Blogs({searchParams}:{
     const allPosts = await getPostsPaginated(page);
     return (<div className="flex items-center justifiy-center">
         <div className="col-span-3">
-            <div className="mt-20 p-10 grid grid-cols-4 gap-5">
+            <div className="mt-20 p-10 grid grid-cols-1 md:grid-cols-3 gap-5">
                 {allPosts.data.map((post) => {
                     return <div key={post.documentId}>
                         <BlogCard post={post} />

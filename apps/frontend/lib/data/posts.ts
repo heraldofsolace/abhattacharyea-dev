@@ -1,7 +1,7 @@
 import { CollectionTypeResponse, SingleTypeResponse } from '@/src/types/types';
 import { strapi } from '@strapi/client';
 
-const client = strapi({ baseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337/api', auth: process.env.STRAPI_TOKEN });
+const client = strapi({ baseURL: `${process.env.STRAPI_BASE_URL}/api` || 'http://localhost:1337/api', auth: process.env.STRAPI_TOKEN });
 
 export async function getPostsPaginated(page=1) {
     const query = {
