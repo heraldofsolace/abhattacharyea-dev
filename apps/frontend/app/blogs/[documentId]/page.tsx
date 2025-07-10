@@ -26,7 +26,7 @@ export default async function Blog({
             <div className="mt-3">
               {blog.data.article_categories?.map((cat) => <Badge key={cat.slug}>{cat.name?.toString()}</Badge>)}
             </div>
-            <article className="mt-10 font-mono prose dark:prose-invert prose-h2:text-5xl prose-p:m-3 prose-h3:text-3xl prose-h4:text-xl ">
+            <article className="max-w-full mt-10 font-mono prose dark:prose-invert prose-h2:text-5xl prose-p:m-3 prose-h3:text-3xl prose-h4:text-xl ">
                 <BlocksRenderer 
                         content={blog.data.body}
                     />
