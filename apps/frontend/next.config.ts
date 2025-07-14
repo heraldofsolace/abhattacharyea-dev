@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       new URL("http://localhost:1337/uploads/*"),
       new URL("https://strapi-production-410d.up.railway.app/uploads/*"),
-      new URL("https://strapi.abhattacharyea.dev/uploads/*")
+      new URL("strapi.abhattacharyea.dev/uploads/*")
     ]
   }
 };
