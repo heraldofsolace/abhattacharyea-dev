@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import { NavBar } from "@/components/navbar";
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { Toaster } from "@/components/ui/sonner";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,6 +59,7 @@ export default function RootLayout({
           </ThemeProvider>
         
       </body>
+      <Script src="https://umami.abhattacharyea.dev/script.js" data-website-id="66866d14-8fbd-4230-b1d4-361a05faaf7d" />
     </html>
   );
 }

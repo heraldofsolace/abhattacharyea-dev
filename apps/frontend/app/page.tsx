@@ -7,14 +7,14 @@ import BlogsList from "@/components/blogs-list";
 
 export default function Home() {
   return (
-    <div>
+    <>
         <HeroSection />
         <Companies />
         <FirstCTA />
         <FrontPagePortfolio />
         <FooterCTA />
         <BlogsList />
-    </div>
+    </>
 
   );
 }
