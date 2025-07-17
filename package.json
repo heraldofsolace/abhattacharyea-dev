@@ -11,6 +11,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "nx": "21.2.1"
+    "nx": "21.2.4"
   }
 }
