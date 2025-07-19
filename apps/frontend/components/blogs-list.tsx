@@ -20,15 +20,15 @@ function ScrollAreaHorizontal({blogs}: {blogs: CollectionTypeResponse<"api::post
                                 {blog.feature_image? <Image
                                     src={`${strapiURL}${blog.feature_image.url}`}
                                     alt={`Photo by`}
-                                    className="aspect-[3/4] h-fit w-fit object-cover"
-                                    width={150}
-                                    height={200}
+                                    className="aspect-[3/2] h-fit w-fit object-cover"
+                                    width={350}
+                                    height={100}
                                 />: null}
                                 
                             </div>
                             </figure>
                         
-                        <h3 className="font-bold text-xl mt-3">{blog.title}</h3>
+                        <h3 className="font-bold text-xl mt-3 overflow-hidden text-wrap w-96 xl:w-96"><Link href={`/blogs/${blog.documentId}`}>{blog.title}</Link></h3>
                         <span className="text-xs">
                             {blog.publishedAt? new Date(blog.publishedAt).toDateString() : null}
                         </span>

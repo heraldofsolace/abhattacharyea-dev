@@ -19,15 +19,16 @@ export default async function BlogSidebar({postId}: {postId: string}) {
     <Sidebar side="right" variant="inset" className="w-96">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>More Posts</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-xl">More Posts</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {morePosts.data.map(post => (
                 <SidebarMenuItem key={post.documentId}>
                     <div className="relative m-5">
                         <Image src={`${strapiURL}${post.feature_image?.url}`} width={300} height={300} alt="" />
-                        <h5 className="absolute top-0 left-0 m-3 underline"><Link href={`/blogs/${post.documentId}`}>{post.title}</Link></h5>
                     </div>
+                    <h5 className="m-3 underline"><Link href={`/blogs/${post.documentId}`}>{post.title}</Link></h5>
+
                     
                 </SidebarMenuItem>
               ))}

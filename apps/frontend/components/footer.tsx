@@ -12,7 +12,7 @@ export default function Footer() {
         }
     ]
     return (
-        <footer className="p-10 xl:p-30 flex flex-col xl:flex-row font-mono font-semibold justify-between">
+        <footer className="w-screen xl:w-auto p-10 xl:p-30 flex flex-col xl:flex-row font-mono font-semibold justify-between">
             <div className="">
                 <h1 className="text-2xl xl:text-7xl">Get in touch</h1>
                 <a className="text-main text-2xl xl:text-5xl" href={"mailto:aniket@abhattacharyea.dev"}>aniket@bhattacharyea.dev</a>
