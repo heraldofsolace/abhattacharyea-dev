@@ -9,7 +9,7 @@ export async function POST(request: Request) {
         headers: {
             'Content-Type': 'application/json',
             'Project-Access-Token': TOKEN,
-            'authorization': ACCESS_TOKEN
+            'authorization': `Bearer ${ACCESS_TOKEN}`
         },
         body: JSON.stringify({
             query: `
